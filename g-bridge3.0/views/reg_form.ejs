@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+    <script language="javascript">
+      function validate() {
+        let pw1 = document.getElementById("pw1").value;
+        let pw2 = document.getElementById("pw2").value;
+        let uid = document.getElementById("uid").value;
+
+        if (pw1 != pw2) {
+          alert("암호가 서로 다릅니다. 다시입력하세요");
+          return false;
+        }
+        return true;
+      }
+    </script>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="align-center; margin:auto">
+
+    <div class="bm-login-form" style='width:300px; margin-left:auto; margin-right:auto; border:1px'>
+
+      <div class="starter-template">
+        <h5> 회원가입</h5> <hr>
+      </div>
+
+     <form name=join onsubmit="return validate()" method=post action="/users/reg">
+       <div class="form-group">
+         <label for="exampleInputEmail1">아이디</label>
+         <input type="text" class="form-control" name="uid" id="uid" placeholder="아이디는 최대 10자까지 입력">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword1">암  호</label>
+         <input type="password" class="form-control" name="upwd" id="upwd" placeholder="암호는 최대 20자까지 입력">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword2">한번 더 입력</label>
+         <input type="password" class="form-control" name="pw2" id="pw2" placeholder="암호를 한번더 입력해주세요">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">이름</label>
+         <input type="text" class="form-control" name="uname" id="uname" placeholder="이름을 입력하세요">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">핸드폰 번호</label>
+         <input type="text" class="form-control" name="upnum" id="upnum" placeholder="핸드폰 번호를 입력하세요( - 없이 입력하세요)">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">생년월일</label>
+         <input type="text" class="form-control" name="ubirth" id="ubirth" placeholder="생년월일 입력하세요(ex.960218)">
+       </div>
+         <hr>
+         <button type="submit" class="btn btn-primary">회원 가입</button>
+      </form>
+     </div>
+      </div>
+     </div>
+    </div><!-- /.container -->
+
+ <!-- Footer 영역 -->

@@ -1,0 +1,156 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>마이페이지</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <h2>내 재능 관리</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted"></span>
+        <span class="badge badge-secondary badge-pill"></span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>내 정보 수정</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/update">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>내 게시글 확인</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/board/1">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>구매 내역</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/buylist">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>튜터 등록</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/apptutor">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6>재능 관리</h6>
+            <small>튜터만 이용 가능합니다.</small>
+          </div>
+          <a class="btn btn-sm btn-success" href="/users/talmanage/1">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6>판매 내역</h6>
+            <small>튜터만 이용 가능합니다.</small>
+          </div>
+          <a class="btn btn-sm btn-success" href="/users/selllist/1">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>회원 탈퇴</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/userdel">이동하기</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-xs-8 order-md-1">
+      <div class="row">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th> 재능번호</th>
+            <th> 재능명</th>
+            <th> 등록일자</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=page_num*(page - 1); i<page*page_num; i++){ %>
+            <% if(i == leng) break; %>
+           <% var item = tdata[i]; %>
+          <tr>
+          <td> <%=item.tnum %> </td>
+          <td> <a href="/users/talupdate/<%=item.tnum%>" style="color:black;"><%=item.ttitle%></a></td>
+          <td> <%=item.tdate.toLocaleDateString(); %></td>
+        </tr>
+        <% } %>
+    </tbody>
+       </table>
+       </div>
+        </div>
+    </div>
+  </div>
+  </form>
+
+  <p>
+    <nav class="text-center" aria-label="...">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+      <% for(var i = 0; i < tdata.length/page_num; i++) { %>
+        <% if(page == i + 1){ %>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="/users/talmanage/<%=i+1%>"><%=i+1%> <span class="sr-only">(current)</span></a>
+          </li>
+        <% }else{ %>
+          <li class="page-item" aria-current="page">
+              <a class="page-link" href="/users/talmanage/<%=i+1%>"><%=i+1%> <span class="sr-only">(current)</span></a>
+          </li>
+        <% } %>
+      <% } %>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+    </nav>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+        <script src="form-validation.js"></script></body>
+</html>

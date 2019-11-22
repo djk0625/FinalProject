@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+    <script language="javascript">
+      function validate() {
+         let item = document.getElementById("tnum").value;
+         if (item == '') {
+           alert("재능번호가 입력되지 않았습니다, 꼭 입력하세요");
+           return false;
+         }
+         return true;
+      }
+      $(document).ready(function() {
+        bsCustomFileInput.init();
+      })
+    </script>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:600px; margin:auto">
+    <div class="bm-login-form" style="width:600px; margin:auto">
+      <div class="starter-template">
+        <h4> 재능등록</h4> <hr>
+      </div>
+   <form name=join onsubmit="return validate()" method=post action="/adminprod/talreg" enctype="multipart/form-data">
+     <div class="form-group"style="width:600px;">
+       <label for="exampleInputEmail1">재능 제목</label>
+       <input type="text" class="form-control" name="ttitle" id="ttitle" placeholder="재능 제목을 입력하세요">
+     </div>
+        <div class="form-group" style="width:600px;">
+         <label for="exampleFormControlSelect1">재능 분류</label>
+          <select class="form-control" id="tcategory" name="tcategory">
+            <option>자격증</option>
+            <option>프로그래밍</option>
+            <option>외국어</option>
+            <option>음악</option>
+            <option>기타</option>
+            <option>재능봉사</option>
+          </select>
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword1">재능 한줄설명</label>
+       </div>
+       <div>
+         <textarea name="tcomment" id="tcomment" cols="80" rows="3" ></textarea>
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword1">재능 상세설명</label>
+       </div>
+       <div>
+         <textarea name="texplanation" id="texplanation" cols="80" rows="10" placeholder="구매자와의 연락할 수단을 반드시 기입해주세요." ></textarea>
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">위치</label>
+         <input type="text" class="form-control" name="tplace" id="tplace" placeholder="예) 강남, 신촌, 잠실">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">가격(원)</label>
+         <input type="text" class="form-control" name="tprice" id="tprice" placeholder="가격(숫자만)을 입력하세요(단, 재능봉사는 0 입력)">
+       </div>
+       <label for="exampleInputEmail1">재능이미지 </label>
+       <div class="form-group">
+          <input type="file" class="custom-file-input2" id="tpic" width=10px aria-describedby="entry2" accept="image/*" name="tpic">
+       </div>
+       <hr>
+       <button class="btn btn-success btn-lg" type="submit">재능 등록하기</button>
+       <a class="btn btn-secondary btn-lg" href="/">취소하기</a></hr>
+   </div>
+      </form>
+     </div>
+     </div>
+    </div><!-- /.container -->
+
+ <!-- Footer 영역 -->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+ <!--  Content (배너이미지) 부분 -->
+  <div> <img src="/images/admin_banner.png" class="img-fluid" alt="배너이미지" width="100%"> </div>
+
+  <!-- 컨텐츠(예, 쇼핑몰일경우 판매제품리스트)헤더부분 -->
+   <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+     <div class="panel panel-default">
+   	  <div class="panel-heading">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">쇼핑몰</a></li>
+            <li class="breadcrumb-item">관리자</a></li>
+            <li class="breadcrumb-item active" aria-current="page">상품등록관리</li>
+          </ol>
+        </nav>
+   	  </div>
+
+      <hr>
+      <div class="container">
+        <a class="btn btn-default" href="/adminprod/form">+신규등록</a>
+        <a class="btn btn-default" href="/adminprod/prodalter">±상품수정</a>
+        <a class="btn btn-default" href="/adminprod/proddelete">-선택삭제</a>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> 번호 </th>
+                <th> 제품분류 </th>
+                <th> 제조사 </th>
+                <th> 상품명 </th>
+                <th> 모델명 </th>
+                <th> 등록일 </th>
+                <th> 판매가 </th>
+                <th> 재고량 </th>
+              </tr>
+            </thead>
+            <tbody>
+               <% prodata.forEach(function (item, index) { %>
+              <tr>
+                <td> <%= item.itemid %> </td>
+                <td> <%= item.category %> </td>
+                <td> <%= item.maker %> </td>
+                <td> <%= item.pname %> </td>
+                <td> <%= item.modelnum %> </td>
+                <td> <%= item.rdate.toLocaleDateString(); %> </td>
+                <td> <%= item.price %> </td>
+                <td> <%= item.amount %> </td>
+              </tr>
+              <% }); %>
+            </table>
+          </div>
+
+  <p>
+  <nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+      <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

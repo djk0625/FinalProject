@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+ <!--  Content (배너이미지) 부분 -->
+ <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+    
+      <div class="container">
+        <a class="btn" href="/adminuser/boardlist/1">전체보기</a>
+        <a class="btn" href="/adminuser/boardtalent/1">재능문의</a>
+        <a class="btn" href="/adminuser/boarddeposit/1">입금문의</a>
+        <a class="btn" href="/adminuser/boardetc/1">기타문의</a>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> 번호 </th>
+                <th> 제목 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; </th>
+                <th> 작성자 </th>
+                <th> 문의유형 </th>
+                <th> 날짜 </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i=page_num*(page - 1); i<page*page_num; i++){ %>
+                <% if(i == leng) break; %>
+               <% var item = idata[i]; %>
+              <tr>
+              <td> <%=item.inum %> </td>
+              <td> <a href="/adminuser/read/<%=item.inum%>"><%=item.ititle%></a></td>
+              <td> <%=item.uid %></td>
+              <td> <%=item.itype %></td>
+              <td> <%=item.idate.toLocaleDateString(); %></td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-primary pull-right" onclick = "location.href='/adminuser/write'">게시글 작성하기 </button>
+    </div>
+
+    <nav class="text-center" aria-label="...">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+      <% for(var i = 0; i < idata.length/page_num; i++) { %>
+        <% if(page == i + 1){ %>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="/adminuser/boardlist/<%=i+1%>"><%=i+1%> <span class="sr-only">(current)</span></a>
+          </li>
+        <% }else{ %>
+          <li class="page-item" aria-current="page">
+              <a class="page-link" href="/adminuser/boardlist/<%=i+1%>"><%=i+1%> <span class="sr-only">(current)</span></a>
+          </li>
+        <% } %>
+      <% } %>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>

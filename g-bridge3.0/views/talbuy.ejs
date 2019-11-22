@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+      <div class="starter-template">
+        <h4> 구매 정보</h4> <hr>
+      </div>
+     <%
+     var tdata = tdata[0];
+     %>
+     <form name=join onsubmit="return validate()" method=post action="/adminprod/talpay/<%=tdata.tnum%>">
+     <div class="col-md-8 order-md-1">
+       <form class="needs-validation" novalidate>
+         <div class="row">
+           <div class="col-md-6 mb-3">
+             <label for="firstName">예금주</label>
+             <input type="text" class="form-control" id="firstName" placeholder="김동주" readonly>
+             <hr>
+             <label for="username">계좌 번호</label>
+             <input type="text" class="form-control" id="username" placeholder="166-651651-651651" readonly>
+             <label for="email">은행명</label>
+             <input type="email" class="form-control" id="email" placeholder="국민은행" readonly>
+           </div>
+         </div>
+         <div class="p-4 mb-3 bg-light rounded">
+           <h4 class=""><p>선택하신 수업정보</p></h4>
+           <hr>
+           <ol class="list-unstyled">
+             <p>재능명 : <%= tdata.ttitle %></p>
+             <p>튜터명 : <%= tdata.uid %></p>
+             <p>가격 : <%= tdata.tprice %></p>
+           </ol>
+         </div>
+          <button type="submit" class="btn btn-primary btn-lg">신청하기</button>
+         <a class="btn btn-secondary btn-lg" href="/">취소하기</a>
+     </div>
+   </form>
+     </div>
+
+
+ <!-- Footer 영역 -->

@@ -1,0 +1,73 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+  <body>
+    <div class="container">
+<hr>
+
+<%
+var tdata = tdata[0];
+%>
+
+<img src="<%=tdata.tpic%>" class="align-self-start mr-3" alt="자격증" width="900px" height="400px">
+<hr>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <div class="input-group-prepend">
+        <span class="input-group-text">수업명</span>
+        <div class="d-inline-flex p-2 bd-highlight"><%=tdata.ttitle %></div>
+        <div class="text-right"></div>
+      </div>
+      <div class="starter-template">
+        <h4> </h4> <hr>
+      </div>
+      <div class="input-group-prepend">
+        <span class="input-group-text">수업 한줄설명</span>
+        <div class="d-inline-flex p-2 bd-highlight"><%=tdata.tcomment %></div>
+        <div class="text-right"></div>
+      </div>
+      <div class="starter-template">
+        <h4> </h4> <hr>
+      </div>
+      <div>
+        <span class="input-group-text">수업 상세설명</span>
+        <textarea name="content" cols="100" rows="5" readonly><%= tdata.texplanation %></textarea>
+      </div>
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="">수업정보</h4>
+        <hr>
+        <ol class="list-unstyled">
+          <p>튜터명 : <%= tdata.uid %></p>
+          <p>장　소 : <%= tdata.tplace %></p>
+          <p>가　격 : <%= tdata.tprice %></p>
+            <a class="btn btn-primary" href="/adminprod/talbuy/<%=tdata.tnum%>">수업신청</a>
+            <a class="btn btn-secondary" href="/adminuser/boardlist">문의하기</a>
+        </ol>
+      </div>
+    </aside><!-- /.blog-sidebar -->
+  </div><!-- /.row -->
+</main><!-- /.container -->
+</body>

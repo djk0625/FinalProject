@@ -1,0 +1,137 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>마이페이지</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <h2>튜터 등록</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted"></span>
+        <span class="badge badge-secondary badge-pill"></span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>내 정보 수정</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/update">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>내 게시글 확인</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/board/1">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>구매 내역</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/buylist">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>튜터 등록</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/apptutor">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6>재능 관리</h6>
+            <small>튜터만 이용 가능합니다.</small>
+          </div>
+          <a class="btn btn-sm btn-success" href="/users/talmanage/1">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6>판매 내역</h6>
+            <small>튜터만 이용 가능합니다.</small>
+          </div>
+          <a class="btn btn-sm btn-success" href="/users/selllist/1">이동하기</a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6>회원 탈퇴</h6>
+          </div>
+          <a class="btn btn-sm btn-light" href="/users/userdel">이동하기</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-8 mb-2">
+      <form name=join onsubmit="return validate()" method=post action="/users/apptutor">
+        <div class="row">
+          <div class="col-md-6 md-6">
+            <label for="firstName"></label>
+          </div>
+        </div>
+        <div class="row-md-8 mb-8 margin:auto">
+      <label for="Textarea">튜터 등록 약관</label>
+
+      <textarea cols ="100" rows = "7" readonly>
+      제 1조. 청개천은 튜터 등록을 위해 다음과 같은 약관을 제시합니다.
+        1. 튜터로 등록시 허위 사실을 기재하지 않습니다.
+        2. 튜터는 구매자에게 성실하게 수업에 임합니다.
+        3. 재능봉사를 원할 경우 가격은 0원입니다.
+        4. 수업을 그만두고 싶을 경우 신청된 모든 수업은 진행하고 종료합니다.
+        5.
+      </textarea>
+        </div>
+        <hr class="">
+    <div class="mb-3">
+      <label for="email">사용자 계좌번호</label>
+      <input type="text" class="form-control" name ="uaccount" id ="uaccount" placeholder="사용자 계좌번호를 입력하세요. (- 빼고)">
+      <div class="invalid-feedback">
+      </div>
+    </div>
+        <hr class="">
+        <button class="btn btn-primary btn-lg" type="submit">튜터 신청하기</button>
+        <a class="btn btn-secondary btn-lg" href="/">취소하기</a></hr>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+        <script src="form-validation.js"></script></body>
+</html>

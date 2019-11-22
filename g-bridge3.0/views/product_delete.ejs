@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:800px; margin:auto">
+
+    <div class="bm-login-form" style='width:700px; margin-left:auto; margin-right:auto; border:1px'>
+
+      <div class="starter-template">
+        <h4> 상품정보삭제</h4> <hr>
+      </div>
+   <form name=join onsubmit="return validate()" method=post action="/adminprod/delete?_method=delete">
+       <div class="form-group col-md-6">
+         <div class="form-group">
+          <label for="exampleFormControlSelect1">상품번호</label>
+           <select class="form-control" id="exampleFormControlSelect1" name= "itemid">
+             <% prodata.forEach(function(item, index){ %>
+               <option><%=item.itemid %></option>
+             <% }); %>
+           </select>
+        </div>
+         <hr>
+         <button type="submit" class="btn btn-primary">상품정보 삭제</button>
+      </form>
+     </div>
+     </div>
+    </div><!-- /.container -->
+
+ <!-- Footer 영역 -->

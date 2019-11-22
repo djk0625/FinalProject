@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:700px; margin:auto">
+
+    <div class="bm-login-form" style="width:600px; margin:auto">
+      <%
+      var idata = idata[0];
+      %>
+      <div class="form-group">
+        <label for="exampleInputPassword1">문의 내용</label>
+      </div>
+      <div>
+        <textarea cols="80" rows="10" readonly><%=idata.iquestion%></textarea>
+      </div>
+
+   <form name=join onsubmit="return validate()" method=POST action="/adminprod/reply/<%=idata.inum%>?_method=PUT">
+
+     <div class="form-group">
+       <label for="exampleInputPassword1">문의 답변</label>
+     </div>
+     <div>
+       <textarea name="ireply" cols="80" rows="10" ><%=idata.ireply%></textarea>
+     </div>
+   </div>
+         <hr>
+         <button type="submit" class="btn btn-success">답변등록</button>
+         <a class="btn btn-secondary" href="/">취소하기</a>
+      </form>
+     </div>
+     </div>
+    </div>
+    <!-- /.container -->
+ <!-- Footer 영역 -->

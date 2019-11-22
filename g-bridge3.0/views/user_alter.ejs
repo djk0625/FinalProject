@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+    <script language="javascript">
+      function validate() {
+         let item = document.getElementById("uid").value;
+         if (item == '') {
+           alert("사용자 아이디가 입력되지 않았습니다, 꼭 입력하세요");
+           return false;
+         }
+         return true;
+      }
+
+      $(document).ready(function() {
+        bsCustomFileInput.init();
+      })
+    </script>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:1000px; margin:auto">
+    <div class="bm-login-form" style='width:800px; margin-left:auto; margin-right:auto; border:2px'>
+
+      <div class="starter-template">
+        <h4> 사용자 정보 변경</h4> <hr>
+      </div>
+
+   <form name=join onsubmit="return validate()" method=POST action="/adminuser/alter?_method=PUT">
+     <div class="form-group col-md-6">
+       <div class="form-group">
+        <label for="exampleFormControlSelect1">사용자 아이디</label>
+         <select class="form-control" id="exampleFormControlSelect1" name= "uid">
+           <% userdata.forEach(function(item, index){ %>
+             <option><%=item.uid %></option>
+           <% }); %>
+         </select>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+       <div class="form-group">
+         <label for="exampleInputPassword1">사용자 이름</label>
+         <input type="text" class="form-control" name="uname" id="uname">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword2">사용자 비밀번호</label>
+         <input type="password" class="form-control" name="pwd" id="pwd" placeholder="최대20자까지 입력">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">사용자 주소</label>
+         <input type="text" class="form-control" name="uadd" id="uadd" placeholder="사용자의 주소 변경">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">사용자 휴대폰 번호</label>
+         <input type="text" class="form-control" name="uphone" id="uphone" placeholder="-빼고 입력">
+       </div>
+     </div>
+     <div class="form-goup col-md-6">
+       <div class="form-group">
+         <label for="exampleInputEmail1">사용자 포인트</label>
+         <input type="text" class="form-control" name="upoint" id="upoint" placeholder="사용자 포인트 변경">
+       </div>
+           <hr>
+         <button type="submit" class="btn btn-primary">사용자 정보 변경</button>
+      </form>
+     </div>
+     </div>
+    </div><!-- /.container -->
+
+ <!-- Footer 영역 -->

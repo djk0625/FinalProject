@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+    <script language="javascript">
+      function validate() {
+         let item = document.getElementById("uid").value;
+         if (item == '') {
+           alert("사용자 아이디가 입력되지 않았습니다, 꼭 입력하세요");
+           return false;
+         }
+         return true;
+      }
+
+      $(document).ready(function() {
+        bsCustomFileInput.init();
+      })
+    </script>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:800px; margin:auto">
+
+    <div class="bm-login-form" style='width:700px; margin-left:auto; margin-right:auto; border:1px'>
+
+      <div class="starter-template">
+        <h4> 사용자 정보 삭제</h4> <hr>
+      </div>
+   <form name=join onsubmit="return validate()" method=post action="/adminuser/delete?_method=delete">
+       <div class="form-group col-md-6">
+         <div class="form-group">
+          <label for="exampleFormControlSelect1">사용자 아이디</label>
+           <select class="form-control" id="exampleFormControlSelect1" name= "uid">
+             <% userdata.forEach(function(item, index){ %>
+               <option><%=item.uid %></option>
+             <% }); %>
+           </select>
+        </div>
+         <hr>
+         <button type="submit" class="btn btn-primary">사용자 정보 삭제</button>
+      </form>
+     </div>
+     </div>
+    </div><!-- /.container -->
+
+ <!-- Footer 영역 -->

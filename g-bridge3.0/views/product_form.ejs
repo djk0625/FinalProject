@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+    <script language="javascript">
+      function validate() {
+         let item = document.getElementById("itemid").value;
+         if (item == '') {
+           alert("상품번호가 입력되지 않았습니다, 꼭 입력하세요");
+           return false;
+         }
+         return true;
+      }
+
+      $(document).ready(function() {
+        bsCustomFileInput.init();
+      })
+    </script>
+
+    <p>
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:800px; margin:auto">
+
+    <div class="bm-login-form" style='width:700px; margin-left:auto; margin-right:auto; border:1px'>
+
+      <div class="starter-template">
+        <h4> 상품등록</h4> <hr>
+      </div>
+
+   <form name=join onsubmit="return validate()" method=post action="/adminprod/product" enctype="multipart/form-data">
+        <div class="form-group">
+         <label for="exampleFormControlSelect1">상품분류</label>
+          <select class="form-control" id="exampleFormControlSelect1" name=category>
+            <option>선풍기</option>
+            <option>에어컨</option>
+            <option>냉풍기</option>
+            <option>미니선풍기</option>
+            <option>냉장고</option>
+            <option>얼풍기</option>
+          </select>
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">상품번호</label>
+         <input type="text" class="form-control" name="itemid" id="itemid" aria-describedby="emailHelp" placeholder="예) P0009">
+         필수항목, 최대6자리, 중복금지, 예) P0009
+       </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+       <div class="form-group">
+         <label for="exampleInputPassword1">상품명</label>
+         <input type="text" class="form-control" name="pname" id="pname" placeholder="최대20자까지 입력">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputPassword2">모델명</label>
+         <input type="text" class="form-control" name="modelnum" id="modelnum" placeholder="최대20자까지 입력">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">판매형태</label>
+         <input type="text" class="form-control" name="event" id="event" placeholder="일반세일, 이벤트세일, 특별세일">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">판매가격(원)</label>
+         <input type="text" class="form-control" name="price" id="price" placeholder="가격을 입력하세요">
+       </div>
+     </div>
+     <div class="form-goup col-md-6">
+       <div class="form-group">
+         <label for="exampleInputEmail1">제조사</label>
+         <input type="text" class="form-control" name="maker" id="maker" placeholder="제조회사를 입력하세요">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">수량</label>
+         <input type="text" class="form-control" name="amount" id="amount" placeholder="수량을 입력하세요">
+       </div>
+       <div class="form-group">
+         <label for="exampleInputEmail1">할인율(%)</label>
+         <input type="text" class="form-control" name="dcrate" id="dcrate" placeholder="예) 10%의 경우에는 10 으로 입력하세요">
+       </div>
+
+      <label for="exampleInputEmail1">상품이미지 (적정사이즈:250x180)</label>
+      <div class="form-group">
+         <input type="file" class="custom-file-input2" id="entry" width=10px aria-describedby="entry2" accept="image/*" name="photo">
+      </div>
+     </div>
+   </div>
+
+         <hr>
+         <button type="submit" class="btn btn-primary">상품등록</button>
+      </form>
+     </div>
+     </div>
+    </div><!-- /.container -->
+
+ <!-- Footer 영역 -->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+  <!-- 컨텐츠(예, 쇼핑몰일경우 판매제품리스트)헤더부분 -->
+   <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+     <form name=join onsubmit="return validate()" method=post action="/adminprod/boarddelete?_method=delete">
+     <div class="panel panel-default">
+      <hr>
+      <div class="container">
+        <!-- <a class="btn btn-default" href="/adminprod/form">+신규등록</a>
+        <a class="btn btn-default" href="/adminprod/prodalter">±상품수정</a>
+        <a class="btn btn-default" href="/adminprod/proddelete">-선택삭제</a> -->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> Check </th>
+                <th> 게시판번호 </th>
+                <th> 작성자 </th>
+                <th> 문의종류 </th>
+                <th> 문의명 </th>
+                <th> 답변여부 </th>
+                <th> 등록날짜 </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i=page_num*(page - 1); i<page*page_num; i++){ %>
+                <% if(i == leng) break; %>
+               <% var item = idata[i]; %>
+              <tr>
+              <td> <input type = "checkbox", name = "inum", value = <%= item.inum %>></td>
+              <td> <%=item.inum %> </td>
+              <td> <%=item.uid %></a></td>
+              <td> <%=item.itype %></td>
+              <td> <a href="/adminprod/reply/<%=item.inum%>" style="color:black; font-weight:bold;"><%=item.ititle%></a></td>
+              <td> <%=item.icomplete %></td>
+              <td> <%=item.idate.toLocaleDateString(); %></td>
+            </tr>
+            <% } %>
+        </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary pull-right">게시글 삭제</button>
+          </div>
+        </form>
+
+        <nav class="text-center" aria-label="...">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <% for(var i = 0; i < idata.length/page_num; i++) { %>
+            <% if(page == i + 1){ %>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="/adminprod/boardmanage/<%=i+1%>"><%=i+1%> <span class="sr-only">(current)</span></a>
+              </li>
+            <% }else{ %>
+              <li class="page-item" aria-current="page">
+                  <a class="page-link" href="/adminprod/boardmanage/<%=i+1%>"><%=i+1%> <span class="sr-only">(current)</span></a>
+              </li>
+            <% } %>
+          <% } %>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+        </nav>

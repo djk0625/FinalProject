@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>청개천</title>
+
+  <!-- Bootstrap -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/isotope.css" media="screen" />
+  <link rel="stylesheet" href="../../css/animate.css">
+  <link rel="stylesheet" href="../../js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+  <link href="../../css/style.css" rel="stylesheet">
+  <!-- =======================================================
+    Theme Name: Dewi
+    Theme URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+    <script language="javascript">
+      function validate() {
+         let item = document.getElementById("ititle").value;
+         if (item == '') {
+           alert("문의제목이 입력되지 않았습니다, 꼭 입력하세요");
+           return false;
+         }
+         return true;
+      }
+      $(document).ready(function() {
+        bsCustomFileInput.init();
+      })
+    </script>
+
+
+    <div class="container">  <!-- container class 가 페이지의 컨텐츠영역을 지정 -->
+    <div class="jumbotron" style="width:700px; margin:auto">
+    <div class="bm-login-form" style="width:600px; margin:auto">
+      <form name=join onsubmit="return validate()" method=post action="/adminuser/write">
+     <div class="form-group"style="width:600px;">
+       <label for="exampleInputEmail1">문의 제목</label>
+       <input type="text" class="form-control" name="ititle" id="ititle" placeholder="문의 제목을 입력하세요">
+     </div>
+        <div class="form-group" style="width:600px;">
+         <label for="exampleFormControlSelect1">문의 종류</label>
+          <select class="form-control" id="itype" name="itype">
+            <option>재능 문의</option>
+            <option>입금 문의</option>
+            <option>기타 문의</option>
+          </select>
+          <hr>
+          <label for="exampleInputPassword1">문의 내용</label>
+          <div class="form-group">
+            <textarea name="iquestion" cols="82" rows="10" ></textarea>
+          </div>
+       </div>
+       <hr>
+       <button type="submit" class="btn btn-success">문의등록</button>
+       <a class="btn btn-secondary" href="/adminuser/boardlist/1">취소하기</a>
+     </form>
+   </div>
+     </div>
+     </div>

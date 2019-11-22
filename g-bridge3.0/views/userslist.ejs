@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+ <!--  Content (배너이미지) 부분 -->
+  <div> <img src="/images/admin_banner.png" class="img-fluid" alt="배너이미지" width="100%"> </div>
+
+  <!-- 컨텐츠(예, 쇼핑몰일경우 판매제품리스트)헤더부분 -->
+   <div class="container-fluid" style="border: solid 20px white; border-radius: 1px">
+     <div class="panel panel-default">
+   	  <div class="panel-heading">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">쇼핑몰</a></li>
+            <li class="breadcrumb-item">관리자</a></li>
+            <li class="breadcrumb-item active" aria-current="page">회원리스트</li>
+          </ol>
+        </nav>
+   	  </div>
+
+      <hr>
+      <div class="container">
+        <a class="btn btn-default" href="/adminuser/usersalter">회원정보수정</a>
+        <a class="btn btn-default" href="/adminuser/usersdelete">회원정보삭제</a>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th> 회원명 </th>
+                <th> 회원아이디 </th>
+                <th> 회원비밀번호 </th>
+                <th> 회원주소 </th>
+                <th> 회원핸드폰번호 </th>
+                <th> 회원보유포인트 </th>
+              </tr>
+            </thead>
+            <tbody>
+               <% prodata.forEach(function (item, index) { %>
+              <tr>
+                <td> <%= item.uname %> </td>
+                <td> <%= item.uid %> </td>
+                <td> <%= item.pwd %> </td>
+                <td> <%= item.uadd %> </td>
+                <td> <%= item.uphone %> </td>
+                <td> <%= item.upoint %> </td>
+              </tr>
+              <% }); %>
+            </table>
+          </div>
+
+  <p>
+  <nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+      <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
